@@ -34,7 +34,7 @@ void patternFilter(int array[], int size){
 
         if(condition1){
             array[i] = digitsSum(array[i]);
-        } else if (condition2a == false && condition2b == true)
+        } else if (condition2a == false && condition2b)
         {
             array[i] = digitsCount(array[i]);
         }
