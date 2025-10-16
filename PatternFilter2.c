@@ -24,7 +24,6 @@ int main(){
 
     patternFilter(array, size);
     arrayPrinter(array, size);
-
 }
 
 void patternFilter(int array[], int size){
@@ -56,7 +55,7 @@ bool isPalindrome(int num)
     int ogNum = num;
     int revNum = 0;
     bool palindrome = false;
-    
+
     while(num > 0){
         int digits = num % 10;
         revNum = revNum * 10 + digits;
