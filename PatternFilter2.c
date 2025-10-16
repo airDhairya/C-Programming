@@ -2,6 +2,7 @@
 #include<stdbool.h>
 
 void patternFilter(int array[], int size);
+void arrayPrinter(int array[], int size);
 bool isPalindrome(int num);
 bool isOdd(int num);
 bool isDivisible3(int num);
@@ -22,6 +23,7 @@ int main(){
     }
 
     patternFilter(array, size);
+    arrayPrinter(array, size);
 
 }
 
@@ -34,13 +36,16 @@ void patternFilter(int array[], int size){
 
         if(condition1){
             array[i] = digitsSum(array[i]);
-        } else if (condition2a == false && condition2b)
+        } else if (condition2a == false && condition2b  )
         {
             array[i] = digitsCount(array[i]);
         }
         
     }
+}
 
+void arrayPrinter(int array[], int size)
+{
     for(int i = 0; i < size; i++){
         printf("%d ", array[i]);
     }
@@ -51,6 +56,7 @@ bool isPalindrome(int num)
     int ogNum = num;
     int revNum = 0;
     bool palindrome = false;
+    
     while(num > 0){
         int digits = num % 10;
         revNum = revNum * 10 + digits;
