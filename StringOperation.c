@@ -11,14 +11,14 @@ void rightShift(char str[50]);
 
 int vowelCount(char str[50]);
 
-int main(){
+int main()
+{
     char string[50];
 
     printf("Enter a string : ");
     scanf(" %[^\n]", string);
 
     stringOperation(string);
-
 }
 
 void toLowerCase(char str[50])
@@ -26,7 +26,8 @@ void toLowerCase(char str[50])
     int length = strlen(str);
 
     for(int i = 0; i < length; i++){
-        if(str[i] >= 'A' && str[i] <= 'Z'){
+        if(str[i] >= 'A' && str[i] <= 'Z')
+        {
             str[i] += 32;
         }
     }
@@ -41,13 +42,16 @@ void stringOperation(char str[50])
     bool primeResult = isPrime(strlen(str));
 
     if(result){
-        if(primeResult){
+        if(primeResult)
+        {
             printf("The string length is prime");
         }
-        else{
+        else
+        {
             printf("The string length is not prime");
         }
-    }else{
+    }else
+    {
         rightShift(str);
     }
 }
@@ -56,7 +60,14 @@ void rightShift(char str[50])
 {
     for (int i = 0; i < strlen(str); i++)
     {
-        str[i] += 1;
+        if(str[i] == 'z')
+        {
+            str[i] = 'a';
+        }
+        else
+        {
+            str[i] += 1;
+        }
     }
     printf("%s", str);
     
@@ -66,7 +77,8 @@ int vowelCount(char str[50])
 {
     int count = 0;
     
-    for(int i = 0; i <strlen(str); i++){
+    for(int i = 0; i <strlen(str); i++)
+    {
         if(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u'){
             count++;
         }
@@ -74,12 +86,19 @@ int vowelCount(char str[50])
     return count;
 }
 
-bool isEven(int count){
+bool isEven(int count)
+{
     return (count % 2 == 0);
 }
 
-bool isPrime(int length){
+bool isPrime(int length)
+{
     bool prime = true;
+
+    if(length < 2)
+    {
+        prime = false;
+    }
 
     for(int i = 2; i * i <= length; i++){
         if(length % i == 0){
